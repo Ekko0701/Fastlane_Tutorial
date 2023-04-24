@@ -42,7 +42,8 @@ platform :ios do
         storage_mode: "git",
         type: "appstore",
         readonly: true,
-        verbose: true
+        keychain_name: "CustomKeyChain",
+        keychain_password: "12345!"
     )
     gym(scheme: "Fastlane_Tutorial")
   end
