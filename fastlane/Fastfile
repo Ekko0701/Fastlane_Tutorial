@@ -26,4 +26,14 @@ platform :ios do
     )
     gym(scheme: "Fastlane_Tutorial")
   end
+  
+  lane :build_test2 do
+    match(
+        git_url: "https://github.com/Ekko0701/Fastlane-Match.git",
+        storage_mode: "git",
+        type: "appstore",
+        readonly: true
+    )
+    gym(scheme: "Fastlane_Tutorial")
+  end
 end
