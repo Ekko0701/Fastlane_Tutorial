@@ -16,7 +16,7 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does3"
+  desc "Description of what the lane does32"
   lane :build_test do
     sync_code_signing(
         type: "appstore",
