@@ -27,4 +27,4 @@ jobs:
         
     - name: Fastlane
       run: |
-        fastlane build_test
+        fastlane build_test2
