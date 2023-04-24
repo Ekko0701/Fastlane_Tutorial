@@ -28,6 +28,15 @@ platform :ios do
   end
   
   lane :build_test2 do
+    create_keychain(
+        name: "CustomKeyChain",
+        password: "12345!",
+        timeout: 2000,
+        default_keychain: true,
+        unlock: true,
+        lock_when_sleeps: false
+    )
+  
     match(
         git_url: "https://github.com/Ekko0701/Fastlane-Match.git",
         storage_mode: "git",
