@@ -1,7 +1,8 @@
 app_identifier("ekko.Fastlane-Tutorial") # The bundle identifier of your app
 apple_id("ehdwn5059@gmail.com") # Your Apple Developer Portal username
 
-team_id("DONG JOO KIM")
+team_name("DONG JOO KIM")
+team_id("34JS69S5XZ")
 
 
 

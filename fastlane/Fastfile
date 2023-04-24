@@ -18,8 +18,12 @@ default_platform(:ios)
 platform :ios do
   desc "Description of what the lane does"
   lane :build_test do
-    match(type: "appstore")
+    sync_code_signing(
+        type: "appstore",
+        app_identifier: "ekko.Fastlane-Tutorial",
+        readonly: true,
+        git_url: "https://github.com/Ekko0701/Fastlane-Match.git"
+    )
     gym(scheme: "Fastlane_Tutorial")
-    upload_to_testflight
   end
 end
