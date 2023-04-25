@@ -30,7 +30,7 @@ jobs:
         fastlane build_test2
       env:
         TOKEN: ${{ secrets.TOKEN }}
-        KEYCHAIN_NAME: $ {{ secrets.KEYCHAIN_NAME }}
-        KEYCHAIN_PASSWORD: $ {{ secrets.KEYCHAIN_PASSWORD }}
+        KEYCHAIN_NAME: ${{ secrets.KEYCHAIN_NAME }}
+        KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
         
