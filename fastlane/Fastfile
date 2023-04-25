@@ -28,27 +28,16 @@ platform :ios do
   end
   
   lane :build_test2 do
-    create_keychain(
-        name: "CustomKeyChain",
-        password: "12345!",
-        timeout: 2000,
-        default_keychain: true,
-        unlock: true,
-        lock_when_sleeps: false
-    )
-  
     authorization_token_str = ENV['TOKEN']
     basic_authorization_token = Base64.strict_encode64(authorization_token_str)
     
     match(
-        app_identifier: "ekko.Fastlane-Tutorial",
-        username: "Ekko0701",
-        git_url: "https://github.com/Ekko0701/Fastlane_Tutorial.git",
+        git_url: "https://github.com/Ekko0701/Fastlane-Match.git",
         git_basic_authorization: basic_authorization_token,
-        clone_branch_directly: true,
         storage_mode: "git",
         type: "appstore",
         readonly: true,
+        app_identifier: "ekko.Fastlane-Tutorial",
         # keychain_name: "CustomKeyChain",
         # keychain_password: "12345!"
     )
