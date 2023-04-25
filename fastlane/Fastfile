@@ -31,6 +31,14 @@ platform :ios do
     authorization_token_str = ENV['TOKEN']
     basic_authorization_token = Base64.strict_encode64(authorization_token_str)
     
+    create_keychain(
+        name: ENV["KEYCHAIN_NAME"],
+        password: ENV["KEYCHAIN_PASSWORD"],
+        timeout: 1800,
+        default_keychain: true,
+        unlock: true,
+        lock_when_sleeps: false
+    )
     
     match(
         git_url: "https://github.com/Ekko0701/Fastlane-Match.git",
@@ -39,6 +47,8 @@ platform :ios do
         type: "appstore",
         readonly: true,
         app_identifier: "ekko.Fastlane-Tutorial",
+        keychain_name: ENV["KEYCHAIN_NAME"],
+        keychain_password: ENV["KEYCHAIN_PASSWORD"]
     )
     gym(scheme: "Fastlane_Tutorial")
   end
