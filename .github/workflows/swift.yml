@@ -28,3 +28,5 @@ jobs:
     - name: Fastlane
       run: |
         fastlane build_test2
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
