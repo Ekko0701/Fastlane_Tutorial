@@ -32,8 +32,8 @@ platform :ios do
     basic_authorization_token = Base64.strict_encode64(authorization_token_str)
     
     create_keychain(
-        name: ENV["KEYCHAIN_NAME"],
-        password: ENV["KEYCHAIN_PASSWORD"],
+        name: "test",
+        password: "12345!",
         timeout: 1800,
         default_keychain: true,
         unlock: true,
@@ -47,8 +47,8 @@ platform :ios do
         type: "appstore",
         readonly: true,
         app_identifier: "ekko.Fastlane-Tutorial",
-        keychain_name: ENV["KEYCHAIN_NAME"],
-        keychain_password: ENV["KEYCHAIN_PASSWORD"]
+        keychain_name: "test",
+        keychain_password: "12345!"
     )
     gym(scheme: "Fastlane_Tutorial")
   end
